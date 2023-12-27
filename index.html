@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Day 6 Task </title>
+</head>
+<body>
+    <h2> Write a “person” class to hold all the details. </h2>
+    <h4>class Person:</h4>
+    def __init__(self, name, age, address):<br>
+        self.name = name<br>
+        self.age = age<br>
+        self.address = address<br>
+<br>
+    def display_info(self):<br>
+        print(f"Name: {self.name}")<br>
+        print(f"Age: {self.age}")<br>
+        print(f"Address: {self.address}")<br>
+
+        <h4>Example usage:</h4>
+if __name__ == "__main__":<br>
+    <h4>Creating an instance of the Person class</h4>
+    person1 = Person("John Doe", 25, "123 Main St, Cityville")<br>
+
+    <h4>Accessing and displaying information</h4>
+    person1.display_info()<br>
+
+    <h2> Write a class to calculate the uber price. </h2>
+    <h4>class UberPricingCalculator:</h4>
+    BASE_FARE = 120<br>
+    COST_PER_MILE = 15<br>
+    COST_PER_MINUTE = 8 <br>
+    SURGE_MULTIPLIER = 1.4<br>
+
+    def __init__(self, distance, duration, surge=False):<br>
+        self.distance = distance<br>
+        self.duration = duration<br>
+        self.surge = surge<br>
+<br>
+    def calculate_price(self):<br>
+        <h4> Apply surge pricing if applicable</h4>
+        if self.surge:<br>
+            price_before_surge = self._calculate_base_price()<br>
+            total_price = price_before_surge * self.SURGE_MULTIPLIER<br>
+        else:<br>
+            total_price = self._calculate_base_price()<br>
+
+        return round(total_price, 2)<br>
+<br>
+    def _calculate_base_price(self):<br>
+        # Calculate base fare
+        base_fare = self.BASE_FARE<br>
+
+        <h4>Calculate distance cost</h4>
+        distance_cost = self.distance * self.COST_PER_MILE<br>
+
+     <h4>Calculate duration cost</h4>
+        duration_cost = self.duration * self.COST_PER_MINUTE<br>
+
+        <h4>Calculate total price</h4>
+        total_price = base_fare + distance_cost + duration_cost<br>
+
+        return total_price<br>
+
+</body>
+</html>
